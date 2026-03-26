@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMA Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f0f12;
+      --surface: #1a1a21;
+      --text: #e8e6e3;
+      --muted: #8a8793;
+      --accent: #c9a227;
+      --accent-soft: rgba(201, 162, 39, 0.15);
+      --radius: 12px;
+      --font: system-ui, "Segoe UI", Roboto, Ubuntu, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
+    }
+
+    header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .project-list li {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .project-list li:hover {
+      border-color: rgba(201, 162, 39, 0.35);
+      background: var(--accent-soft);
+    }
+
+    .project-list a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project-list a:hover {
+      color: var(--accent);
+    }
+
+    .project-list .desc {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>DMA Portfolio</h1>
+      <p class="tagline">Digital media work and projects.</p>
+    </header>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <ul class="project-list">
+        <!-- Add your work: duplicate an <li> block and link to HTML files or subfolders -->
+        <li>
+          <a href="#">Project title</a>
+          <span class="desc">Short description — replace with your first piece.</span>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Update this page as you add work. Open <code>index.html</code> in a browser or host the folder on any static host.</p>
+    </footer>
+  </div>
+</body>
+</html>
