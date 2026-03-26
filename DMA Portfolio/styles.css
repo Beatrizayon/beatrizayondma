@@ -310,6 +310,8 @@ footer code {
   background: #fff;
   resize: both;
   overflow: auto;
+  /* Keep a tiny buffer so browser resize handle isn't occluded by iframe. */
+  padding: 2px;
   box-sizing: border-box;
 }
 
