@@ -288,8 +288,17 @@
         <h2>Illustrator</h2>
         <ul class="project-list">
           <li>
-            <a href="#">Project title</a>
-            <span class="desc">Project description.</span>
+            <a href="#">Artist Tour Advertisement</a>
+            <span class="desc">A collection of artist tour advertisements I designed.</span>
+            <div class="dpr-carousel" role="region" aria-label="Artist tour advertisements gallery" tabindex="0">
+              <button type="button" class="dpr-carousel-nav dpr-prev" aria-label="Previous image" data-action="prev"></button>
+              <div class="dpr-carousel-stage" aria-live="polite">
+                <img class="dpr-slide is-active" src="dprmerch.png" alt="Artist tour advertisement: merch" data-slide-index="0">
+                <img class="dpr-slide" src="dprbillboard.png" alt="Artist tour advertisement: billboard" data-slide-index="1">
+                <img class="dpr-slide" src="dprposter.png" alt="Artist tour advertisement: poster" data-slide-index="2">
+              </div>
+              <button type="button" class="dpr-carousel-nav dpr-next" aria-label="Next image" data-action="next"></button>
+            </div>
           </li>
         </ul>
       </section>
@@ -355,6 +364,71 @@
         }
         tabs[next].focus();
         showPanel(next);
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var carousels = document.querySelectorAll(".dpr-carousel");
+      if (!carousels.length) return;
+
+      function renderCarousel(carousel, index) {
+        var slides = Array.prototype.slice.call(carousel.querySelectorAll(".dpr-slide"));
+        var n = slides.length;
+        if (!n) return;
+
+        slides.forEach(function (s) {
+          s.classList.remove("is-active", "is-left", "is-right");
+        });
+
+        var left = (index - 1 + n) % n;
+        var right = (index + 1) % n;
+
+        slides[left].classList.add("is-left");
+        slides[index].classList.add("is-active");
+        slides[right].classList.add("is-right");
+      }
+
+      carousels.forEach(function (carousel) {
+        var slides = Array.prototype.slice.call(carousel.querySelectorAll(".dpr-slide"));
+        if (!slides.length) return;
+
+        var initialIndex = slides.findIndex(function (s) {
+          return s.classList.contains("is-active");
+        });
+        if (initialIndex < 0) initialIndex = 0;
+
+        var state = { index: initialIndex };
+
+        renderCarousel(carousel, state.index);
+
+        var prevBtn = carousel.querySelector('[data-action="prev"]');
+        var nextBtn = carousel.querySelector('[data-action="next"]');
+
+        function next(delta) {
+          state.index = (state.index + delta + slides.length) % slides.length;
+          renderCarousel(carousel, state.index);
+        }
+
+        if (prevBtn) prevBtn.addEventListener("click", function () { next(-1); });
+        if (nextBtn) nextBtn.addEventListener("click", function () { next(1); });
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener("click", function () {
+            state.index = i;
+            renderCarousel(carousel, state.index);
+          });
+        });
+
+        carousel.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            next(-1);
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            next(1);
+          }
+        });
       });
     })();
   </script>
