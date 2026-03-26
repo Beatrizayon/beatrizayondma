@@ -284,6 +284,20 @@ footer code {
   margin-top: 0.55rem;
 }
 
+.project-embed {
+  margin-top: 0.9rem;
+  width: 100%;
+  height: clamp(420px, 70vh, 900px);
+  min-height: 420px;
+  border: 2px solid #000;
+  background: #fff;
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
 .tab-panel .lead {
   margin: 0 0 1rem;
   color: var(--muted);
@@ -412,4 +426,53 @@ footer code {
   height: 22px;
   display: block;
   shape-rendering: crispEdges;
+}
+
+.bb-cafe-link {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  flex-wrap: wrap;
+}
+
+.bb-cafe-thumb {
+  width: 380px;
+  height: 220px;
+  border: 2px solid #000;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: #dff4ff;
+}
+
+.bb-cafe-thumb svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.bb-cafe-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bb-cafe-title {
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: #000;
+}
+
+.bb-play-badge {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
