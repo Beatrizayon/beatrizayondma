@@ -4,16 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DMA Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0f12;
-      --surface: #1a1a21;
-      --text: #e8e6e3;
-      --muted: #8a8793;
-      --accent: #c9a227;
-      --accent-soft: rgba(201, 162, 39, 0.15);
+      --bg: #ffffff;
+      --surface: #f0f7fb;
+      --text: #1c2430;
+      --muted: #5c6b7a;
+      --accent: #5eb8e8;
+      --accent-deep: #3a9fd4;
+      --accent-soft: rgba(94, 184, 232, 0.18);
+      --border: rgba(94, 184, 232, 0.22);
       --radius: 12px;
       --font: system-ui, "Segoe UI", Roboto, Ubuntu, sans-serif;
+      --font-pixel: "Press Start 2P", monospace;
     }
 
     * {
@@ -30,7 +36,7 @@
     }
 
     .wrap {
-      max-width: 720px;
+      max-width: 840px;
       margin: 0 auto;
       padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem);
     }
@@ -38,20 +44,26 @@
     header {
       margin-bottom: 3rem;
       padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid var(--border);
     }
 
     h1 {
-      font-size: clamp(1.75rem, 4vw, 2.25rem);
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.5rem;
+      font-family: var(--font-pixel);
+      font-size: clamp(1rem, 5.5vw, 1.65rem);
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: 0.02em;
+      margin: 0 0 1rem;
+      color: var(--text);
+      text-align: center;
+      text-shadow: 2px 2px 0 var(--accent-soft);
     }
 
     .tagline {
       color: var(--muted);
       font-size: 1.05rem;
       margin: 0;
+      text-align: center;
     }
 
     section {
@@ -59,7 +71,7 @@
     }
 
     h2 {
-      font-size: 0.75rem;
+      font-size: clamp(0.9rem, 2.4vw, 1.1rem);
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--accent);
@@ -78,13 +90,14 @@
       border-radius: var(--radius);
       padding: 1.25rem 1.5rem;
       margin-bottom: 0.75rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: border-color 0.2s, background 0.2s;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
     }
 
     .project-list li:hover {
-      border-color: rgba(201, 162, 39, 0.35);
+      border-color: var(--accent);
       background: var(--accent-soft);
+      box-shadow: 0 0 0 1px var(--accent-soft);
     }
 
     .project-list a {
@@ -94,7 +107,7 @@
     }
 
     .project-list a:hover {
-      color: var(--accent);
+      color: var(--accent-deep);
     }
 
     .project-list .desc {
@@ -107,13 +120,144 @@
     footer {
       margin-top: 3rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid var(--border);
       font-size: 0.875rem;
       color: var(--muted);
     }
 
     footer a {
-      color: var(--accent);
+      color: var(--accent-deep);
+    }
+
+    footer code {
+      background: var(--accent-soft);
+      color: var(--text);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    .tabs {
+      margin-top: 1.5rem;
+    }
+
+    .tablist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.75rem;
+    }
+
+    .tablist li {
+      margin: 0;
+    }
+
+    .tablist button {
+      margin: 0;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 0.55rem 0.85rem;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+
+    .tablist button:hover {
+      background: #f5f5f5;
+    }
+
+    .tablist button:focus-visible {
+      outline: 2px solid var(--accent-deep);
+      outline-offset: 2px;
+    }
+
+    .tablist button[aria-selected="true"] {
+      font-weight: 700;
+      background: #fff;
+    }
+
+    .tab-panel {
+      display: none;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      padding: 1.35rem 1.5rem;
+      min-height: 12rem;
+    }
+
+    .tab-panel.is-active {
+      display: block;
+    }
+
+    .tab-panel h2 {
+      color: var(--accent-deep);
+    }
+
+    .tab-panel .project-list li {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 0;
+    }
+
+    .tab-panel .project-list li:hover {
+      border-color: #000;
+      background: #fafafa;
+      box-shadow: none;
+    }
+
+    .tab-panel .project-list a:hover {
+      color: var(--accent-deep);
+    }
+
+    .tab-panel .lead {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      max-width: 52ch;
+    }
+
+    .about-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .about-portrait {
+      flex: 0 0 auto;
+      width: min(220px, 42vw);
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #000;
+      display: block;
+    }
+
+    .about-layout .lead {
+      flex: 1 1 16rem;
+      margin: 0;
+      max-width: none;
+    }
+
+    .about-figure {
+      margin: 0;
+      padding: 0;
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .about-caption {
+      margin-top: 0.5rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.3;
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>
@@ -122,22 +266,145 @@
     <header>
       <h1>DMA Portfolio</h1>
       <p class="tagline">Digital media work and projects.</p>
+
+      <nav class="tabs" aria-label="Portfolio sections">
+        <ul class="tablist" role="tablist">
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-about" aria-selected="true" aria-controls="panel-about">About Me</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-art74" aria-selected="false" aria-controls="panel-art74" tabindex="-1">Art 74</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-art75" aria-selected="false" aria-controls="panel-art75" tabindex="-1">Art 75</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-illustrator" aria-selected="false" aria-controls="panel-illustrator" tabindex="-1">Illustrator</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-studio" aria-selected="false" aria-controls="panel-studio" tabindex="-1">Studio Arts</button>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <ul class="project-list">
-        <!-- Add your work: duplicate an <li> block and link to HTML files or subfolders -->
-        <li>
-          <a href="#">Project title</a>
-          <span class="desc">Short description — replace with your first piece.</span>
-        </li>
-      </ul>
-    </section>
+    <div class="tab-panels">
+      <section id="panel-about" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-about">
+        <h2>About Me</h2>
+        <div class="about-layout">
+          <figure class="about-figure">
+            <img
+              class="about-portrait"
+              src="selfportrait.png"
+              alt="Self-portrait of Beatriz Ayon Tapia">
+            <figcaption class="about-caption">Self Portrait created in p5.js</figcaption>
+          </figure>
+          <p class="lead">Hello, I am Beatriz Ayon Tapia a first generation college student at San Jose State. I have always used art as a manner of self expression exploring different creative mediums and programs. Here at San Jose State University the Digital Media Arts (DMA) program has allowed me to collaborate other mediums with computer programs to create visuals works without limits.</p>
+        </div>
+      </section>
+
+      <section id="panel-art74" class="tab-panel" role="tabpanel" aria-labelledby="tab-art74" hidden>
+        <h2>Art 74</h2>
+        <p class="lead">Work from Art 74 — add links and images as you go.</p>
+        <ul class="project-list">
+          <li>
+            <a href="#">Project title</a>
+            <span class="desc">Short description — replace with your piece.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="panel-art75" class="tab-panel" role="tabpanel" aria-labelledby="tab-art75" hidden>
+        <h2>Art 75</h2>
+        <p class="lead">Work from Art 75 — add projects below.</p>
+        <ul class="project-list">
+          <li>
+            <a href="#">Project title</a>
+            <span class="desc">Short description — replace with your piece.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="panel-illustrator" class="tab-panel" role="tabpanel" aria-labelledby="tab-illustrator" hidden>
+        <h2>Illustrator</h2>
+        <p class="lead">Illustrator pieces and exercises.</p>
+        <ul class="project-list">
+          <li>
+            <a href="#">Project title</a>
+            <span class="desc">Short description — replace with your piece.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="panel-studio" class="tab-panel" role="tabpanel" aria-labelledby="tab-studio" hidden>
+        <h2>Studio Arts</h2>
+        <p class="lead">Studio work and documentation.</p>
+        <ul class="project-list">
+          <li>
+            <a href="#">Project title</a>
+            <span class="desc">Short description — replace with your piece.</span>
+          </li>
+        </ul>
+      </section>
+    </div>
 
     <footer>
       <p>Update this page as you add work. Open <code>index.html</code> in a browser or host the folder on any static host.</p>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      var tablist = document.querySelector(".tablist");
+      if (!tablist) return;
+      var tabs = tablist.querySelectorAll('[role="tab"]');
+      var panels = document.querySelectorAll('[role="tabpanel"]');
+
+      function showPanel(index) {
+        tabs.forEach(function (tab, i) {
+          var on = i === index;
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+          tab.tabIndex = on ? 0 : -1;
+        });
+        panels.forEach(function (panel, i) {
+          var on = i === index;
+          panel.classList.toggle("is-active", on);
+          panel.hidden = !on;
+        });
+      }
+
+      tablist.addEventListener("click", function (e) {
+        var btn = e.target.closest('[role="tab"]');
+        if (!btn || !tablist.contains(btn)) return;
+        var i = Array.prototype.indexOf.call(tabs, btn);
+        if (i >= 0) showPanel(i);
+      });
+
+      tablist.addEventListener("keydown", function (e) {
+        if (
+          e.key !== "ArrowLeft" &&
+          e.key !== "ArrowRight" &&
+          e.key !== "Home" &&
+          e.key !== "End"
+        )
+          return;
+        var current = Array.prototype.indexOf.call(
+          tabs,
+          document.activeElement
+        );
+        if (current < 0) return;
+        e.preventDefault();
+        var next;
+        if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = tabs.length - 1;
+        else {
+          var delta = e.key === "ArrowLeft" ? -1 : 1;
+          next = (current + delta + tabs.length) % tabs.length;
+        }
+        tabs[next].focus();
+        showPanel(next);
+      });
+    })();
+  </script>
 </body>
 </html>
