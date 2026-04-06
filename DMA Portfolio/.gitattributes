@@ -1,0 +1,13 @@
+# Use LF in the repo and in the working tree (avoids GitHub "LF to CRLF" noise on Windows)
+* text=auto eol=lf
+
+# Binary assets — never touch line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

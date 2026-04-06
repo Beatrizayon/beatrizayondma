@@ -108,8 +108,8 @@ h1 {
 
 .tagline {
   font-family: "Montserrat", var(--font);
-  color: var(--accent-deep);
-  font-size: 1.25rem;
+  color: #000;
+  font-size: 1.45rem;
   font-weight: 700;
   margin: 0;
   text-align: center;
@@ -298,6 +298,12 @@ footer code {
   box-sizing: border-box;
 }
 
+.mini-game-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .mini-game-frame {
   margin: 0.25rem 0 0 0;
   width: min(520px, 100%);
@@ -351,6 +357,15 @@ footer code {
   flex: 1 1 16rem;
   margin: 0;
   max-width: none;
+}
+
+.artist-statement-label {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  font-size: 1.08rem;
 }
 
 .about-text a {
@@ -454,12 +469,25 @@ footer code {
 }
 
 .bb-cafe-link {
-  display: flex;
-  align-items: flex-end;
-  gap: 1rem;
+  display: block;
   text-decoration: none;
   color: inherit;
+}
+
+.bb-cafe-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.bb-cafe-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 380px;
 }
 
 .bb-cafe-thumb {
@@ -514,9 +542,9 @@ footer code {
 .dpr-carousel-stage {
   position: relative;
   width: 100%;
-  max-width: 680px;
-  height: clamp(240px, 40vw, 420px);
-  min-height: 240px;
+  max-width: 960px;
+  height: clamp(340px, 52vw, 600px);
+  min-height: 340px;
   background: #fff;
   border: 2px solid #000;
   overflow: hidden;
@@ -570,25 +598,22 @@ footer code {
   pointer-events: none;
 }
 
+.dpr-slide.is-left,
+.dpr-slide.is-right {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0.88);
+  filter: none;
+}
+
 .dpr-slide.is-active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   z-index: 2;
   transform: translate(-50%, -50%) scale(1);
-}
-
-.dpr-slide.is-left {
-  opacity: 0.72;
-  pointer-events: auto;
-  z-index: 1;
-  transform: translate(-50%, -50%) translateX(-32%) scale(0.75);
-}
-
-.dpr-slide.is-right {
-  opacity: 0.72;
-  pointer-events: auto;
-  z-index: 1;
-  transform: translate(-50%, -50%) translateX(32%) scale(0.75);
 }
 
 @media (max-width: 520px) {
@@ -603,15 +628,14 @@ footer code {
   }
 
   .dpr-carousel-stage {
-    height: clamp(220px, 55vw, 360px);
-    min-height: 220px;
+    height: clamp(280px, 62vw, 480px);
+    min-height: 280px;
   }
 
-  .dpr-slide.is-left {
-    transform: translate(-50%, -50%) translateX(-28%) scale(0.72);
-  }
-
+  .dpr-slide.is-left,
   .dpr-slide.is-right {
-    transform: translate(-50%, -50%) translateX(28%) scale(0.72);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(0.88);
   }
 }
