@@ -29,7 +29,7 @@ body {
 }
 
 .wrap {
-  max-width: 1040px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 5vw, 2.5rem);
   position: relative;
@@ -152,7 +152,7 @@ h2 {
 .project-list a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .project-list a:hover {
@@ -240,7 +240,7 @@ footer code {
   background: #fff;
   color: #000;
   border: 2px solid #000;
-  padding: 2.6rem 3rem;
+  padding: 2.6rem clamp(1.35rem, 4vw, 2.75rem);
   min-height: 20rem;
 }
 
@@ -258,11 +258,24 @@ footer code {
   margin-bottom: 1.75rem;
 }
 
+.tab-panel .project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.tab-panel .project-list > li.project-list-item-wide {
+  grid-column: 1 / -1;
+}
+
 .tab-panel .project-list li {
   background: #fff;
   border: 2px solid #000;
   border-radius: 0;
   padding: 1.9rem 2rem;
+  margin-bottom: 0;
+  min-width: 0;
 }
 
 .tab-panel .project-list li:hover {
@@ -277,11 +290,84 @@ footer code {
 
 .tab-panel .project-list a {
   font-size: 1.18rem;
+  font-weight: 700;
 }
 
 .tab-panel .project-list .desc {
   font-size: 1.05rem;
   margin-top: 0.55rem;
+}
+
+.project-progress {
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  align-items: start;
+}
+
+.project-progress-step:last-child {
+  grid-column: 1 / -1;
+}
+
+.project-progress-step {
+  margin: 0;
+  border: 2px solid #000;
+  background: #fff;
+  padding: 0.55rem 0.65rem 0.65rem;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.project-progress-caption {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  color: #000;
+}
+
+.project-progress-step > img {
+  display: block;
+  width: 100%;
+  max-width: min(560px, 100%);
+  height: auto;
+  margin: 0 auto;
+}
+
+.project-progress-rotate-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: min(240px, 38vw);
+  padding: 0.35rem;
+  box-sizing: border-box;
+}
+
+.project-progress-rotate-left img {
+  display: block;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  max-width: min(340px, 100%);
+  width: auto;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .project-progress {
+    grid-template-columns: 1fr;
+  }
+
+  .project-progress-step:last-child {
+    grid-column: auto;
+  }
+
+  .project-progress-rotate-left {
+    min-height: min(320px, 50vw);
+  }
+
+  .project-progress-rotate-left img {
+    max-width: min(520px, 95vw);
+  }
 }
 
 .project-embed {
@@ -298,30 +384,22 @@ footer code {
   box-sizing: border-box;
 }
 
-.mini-game-hint {
-  margin: 0.35rem 0 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
+/* Matches p5 canvas 600×600 in gamecode — square box hugs the game */
 .mini-game-frame {
-  margin: 0.25rem 0 0 0;
-  width: min(520px, 100%);
-  height: min(520px, 65vh);
-  min-width: 240px;
-  min-height: 240px;
+  margin: 0.35rem auto 0;
+  width: min(600px, 100%);
   max-width: 100%;
-  max-height: 720px;
+  aspect-ratio: 1 / 1;
+  position: relative;
   border: 2px solid #000;
   background: #fff;
-  resize: both;
-  overflow: auto;
-  /* Keep a tiny buffer so browser resize handle isn't occluded by iframe. */
-  padding: 2px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .mini-game-embed {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: 0;
@@ -453,23 +531,39 @@ footer code {
   margin-bottom: 0.75rem;
 }
 
-.panel-next {
+.panel-section-nav {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 0.9rem;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.75rem;
 }
 
-.next-button {
+.panel-section-nav--split {
+  justify-content: space-between;
+}
+
+.next-button,
+.prev-button {
   background: transparent;
   border: 0;
   padding: 0;
   cursor: pointer;
 }
 
+.next-button:focus-visible,
+.prev-button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
 .next-arrow-image {
   width: 56px;
   height: 28px;
   display: block;
+}
+
+.nav-arrow-prev {
+  transform: scaleX(-1);
 }
 
 .fruit-icons {
@@ -491,13 +585,17 @@ footer code {
   display: block;
   text-decoration: none;
   color: inherit;
+  width: 100%;
+  max-width: 100%;
 }
 
 .bb-cafe-stack {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.55rem;
+  gap: 0.65rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .bb-cafe-title-row {
@@ -506,12 +604,15 @@ footer code {
   gap: 0.75rem;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 380px;
+  max-width: 100%;
 }
 
 .bb-cafe-thumb {
-  width: 380px;
-  height: 220px;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 380 / 220;
+  height: auto;
+  min-height: clamp(260px, 42vw, 520px);
   border: 2px solid #000;
   display: block;
   position: relative;
@@ -549,6 +650,26 @@ footer code {
   flex: 0 0 auto;
 }
 
+.illustrator-figure {
+  margin: 0.9rem auto 0;
+  max-width: min(400px, 92%);
+  border: 2px solid #000;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.illustrator-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.illustrator-figure--large {
+  max-width: 100%;
+  width: 100%;
+}
+
 .dpr-carousel {
   margin-top: 1rem;
   width: 100%;
@@ -561,9 +682,9 @@ footer code {
 .dpr-carousel-stage {
   position: relative;
   width: 100%;
-  max-width: 960px;
-  height: clamp(340px, 52vw, 600px);
-  min-height: 340px;
+  max-width: 100%;
+  height: clamp(420px, 62vw, 720px);
+  min-height: 420px;
   background: #fff;
   border: 2px solid #000;
   overflow: hidden;
@@ -647,8 +768,8 @@ footer code {
   }
 
   .dpr-carousel-stage {
-    height: clamp(280px, 62vw, 480px);
-    min-height: 280px;
+    height: clamp(300px, 72vw, 560px);
+    min-height: 300px;
   }
 
   .dpr-slide.is-left,
@@ -656,5 +777,11 @@ footer code {
     opacity: 0;
     visibility: hidden;
     transform: translate(-50%, -50%) scale(0.88);
+  }
+}
+
+@media (max-width: 700px) {
+  .bb-cafe-thumb {
+    min-height: 180px;
   }
 }

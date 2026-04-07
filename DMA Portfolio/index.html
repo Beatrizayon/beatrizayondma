@@ -75,7 +75,17 @@
             <p><strong>Contact me:</strong> <a href="mailto:beatriz.ayon04@gmail.com">beatriz.ayon04@gmail.com</a></p>
           </div>
         </div>
-        <div class="panel-next">
+        <div class="panel-section-nav panel-section-nav--split">
+          <button
+            type="button"
+            class="prev-button"
+            data-target-tab="tab-studio"
+            aria-label="Previous section: Studio Arts">
+            <img
+              class="next-arrow-image nav-arrow-prev"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
           <button type="button" class="next-button" data-target-tab="tab-art74" aria-label="Next section: Art 74">
             <img
               class="next-arrow-image"
@@ -88,11 +98,36 @@
       <section id="panel-art74" class="tab-panel" role="tabpanel" aria-labelledby="tab-art74" hidden>
         <h2>Art 74</h2>
         <ul class="project-list">
-          <li>
-            <a href="#">Minecraft into 3D</a>
+          <li class="project-list-item-wide">
+            <a href="#">Minecraft 3D Print</a>
             <span class="desc">I firstly built my model within Minecraft using blocks to construct an Indian Ring Neck Parakeet. I then extracted my build using Mineways and then 3d print my final model.</span>
+            <div class="project-progress" role="group" aria-label="Minecraft 3D print progress">
+              <figure class="project-progress-step">
+                <figcaption class="project-progress-caption">Initial Minecraft build</figcaption>
+                <img
+                  src="mcbird.png"
+                  alt="Indian ring neck parakeet built from blocks in Minecraft"
+                  loading="lazy">
+              </figure>
+              <figure class="project-progress-step">
+                <figcaption class="project-progress-caption">Extracted STL file</figcaption>
+                <div class="project-progress-rotate-left">
+                  <img
+                    src="mcbirdstl.png"
+                    alt="Parakeet model exported as STL in Mineways"
+                    loading="lazy">
+                </div>
+              </figure>
+              <figure class="project-progress-step">
+                <figcaption class="project-progress-caption">3D printed result</figcaption>
+                <img
+                  src="printmcbird.png"
+                  alt="Finished 3D printed parakeet model"
+                  loading="lazy">
+              </figure>
+            </div>
           </li>
-          <li>
+          <li class="project-list-item-wide">
             <a href="#">
               Mini-game: Catch the Fruits!
               <span class="fruit-icons" aria-hidden="true">
@@ -232,7 +267,6 @@
               </span>
             </a>
             <span class="desc">Catch the fruits in a fun mini-game made through p5.js.</span>
-            <p class="mini-game-hint">(Adjust iframe with corner slider as needed.)</p>
             <div class="mini-game-frame" aria-hidden="false">
               <iframe
                 class="mini-game-embed"
@@ -243,7 +277,7 @@
               </iframe>
             </div>
           </li>
-          <li>
+          <li class="project-list-item-wide">
             <a
               class="bb-cafe-link"
               href="https://beatrizayon.github.io/bbctitle.html"
@@ -267,7 +301,17 @@
             <span class="desc">This game contains backgrounds, characters, and props drawn by me. I hand coded the project using html and image mapping for the user interactivity.</span>
           </li>
         </ul>
-        <div class="panel-next">
+        <div class="panel-section-nav panel-section-nav--split">
+          <button
+            type="button"
+            class="prev-button"
+            data-target-tab="tab-about"
+            aria-label="Previous section: About Me">
+            <img
+              class="next-arrow-image nav-arrow-prev"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
           <button
             type="button"
             class="next-button"
@@ -331,12 +375,34 @@
             </div>
           </li>
         </ul>
+        <div class="panel-section-nav panel-section-nav--split">
+          <button
+            type="button"
+            class="prev-button"
+            data-target-tab="tab-art74"
+            aria-label="Previous section: Art 74">
+            <img
+              class="next-arrow-image nav-arrow-prev"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+          <button
+            type="button"
+            class="next-button"
+            data-target-tab="tab-illustrator"
+            aria-label="Next section: Illustrator">
+            <img
+              class="next-arrow-image"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+        </div>
       </section>
 
       <section id="panel-illustrator" class="tab-panel" role="tabpanel" aria-labelledby="tab-illustrator" hidden>
         <h2>Illustrator</h2>
         <ul class="project-list">
-          <li>
+          <li class="project-list-item-wide">
             <a href="#">Artist Tour Advertisement</a>
             <span class="desc">For this assignment we were to design a billboard, merchandise, and a poster for an Artist Tour. My music artist of choice was DPR IAN. Through this assignment I was able to play with cohesive yet different compositions to suit the type of product.</span>
             <div class="dpr-carousel" role="region" aria-label="Artist tour advertisements gallery" tabindex="0">
@@ -349,11 +415,81 @@
               <button type="button" class="dpr-carousel-nav dpr-next" aria-label="Next image" data-action="next"></button>
             </div>
           </li>
+          <li>
+            <a
+              href="illustrator-selfportrait.jpg"
+              target="_blank"
+              rel="noopener noreferrer">Self Portrait</a>
+            <span class="desc">Grayscale vector portrait in Adobe Illustrator, built with flat tonal shapes and directional light.</span>
+            <figure class="illustrator-figure">
+              <img
+                src="illustrator-selfportrait.jpg"
+                alt="Vector self portrait in grayscale, cel-shaded style"
+                loading="lazy">
+            </figure>
+          </li>
+          <li>
+            <a
+              href="illustrator-dreamscape.png"
+              target="_blank"
+              rel="noopener noreferrer">Dreamscape</a>
+            <span class="desc">For this assignment we were to make a dreamlike illustration. When sketching out ideas I wanted to create a colorful galaxy like atmosphere. I was able to incorporate my personal style using Illustrator's tools.</span>
+            <figure class="illustrator-figure illustrator-figure--large">
+              <img
+                src="illustrator-dreamscape.png"
+                alt="Dreamscape: surreal vector art with pink-haired figure, rainbow arcs, and starry night sky"
+                loading="lazy">
+            </figure>
+          </li>
         </ul>
+        <div class="panel-section-nav panel-section-nav--split">
+          <button
+            type="button"
+            class="prev-button"
+            data-target-tab="tab-art75"
+            aria-label="Previous section: Art 75">
+            <img
+              class="next-arrow-image nav-arrow-prev"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+          <button
+            type="button"
+            class="next-button"
+            data-target-tab="tab-studio"
+            aria-label="Next section: Studio Arts">
+            <img
+              class="next-arrow-image"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+        </div>
       </section>
 
       <section id="panel-studio" class="tab-panel" role="tabpanel" aria-labelledby="tab-studio" hidden>
         <h2>Studio Arts</h2>
+        <div class="panel-section-nav panel-section-nav--split">
+          <button
+            type="button"
+            class="prev-button"
+            data-target-tab="tab-illustrator"
+            aria-label="Previous section: Illustrator">
+            <img
+              class="next-arrow-image nav-arrow-prev"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+          <button
+            type="button"
+            class="next-button"
+            data-target-tab="tab-about"
+            aria-label="Next section: About Me">
+            <img
+              class="next-arrow-image"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+        </div>
       </section>
     </div>
 
@@ -387,9 +523,9 @@
       });
 
       document.addEventListener("click", function (e) {
-        var nextBtn = e.target.closest(".next-button");
-        if (!nextBtn) return;
-        var targetId = nextBtn.getAttribute("data-target-tab");
+        var navBtn = e.target.closest(".next-button, .prev-button");
+        if (!navBtn) return;
+        var targetId = navBtn.getAttribute("data-target-tab");
         if (!targetId) return;
         var targetTab = document.getElementById(targetId);
         if (!targetTab) return;
