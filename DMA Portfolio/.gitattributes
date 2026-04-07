@@ -1,7 +1,15 @@
-# Use LF in the repo and in the working tree (avoids GitHub "LF to CRLF" noise on Windows)
+# Store and check out text files as LF (avoids CRLF ↔ LF noise on Windows / GitHub)
 * text=auto eol=lf
 
-# Binary assets — never touch line endings
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.svg text eol=lf
+*.properties text eol=lf
+
+# Binary — do not modify line endings
 *.png binary
 *.jpg binary
 *.jpeg binary
