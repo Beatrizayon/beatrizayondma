@@ -269,6 +269,16 @@ footer code {
   grid-column: 1 / -1;
 }
 
+#panel-art75 .project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#panel-art75 .project-list li {
+  padding: 2.15rem 2.35rem;
+}
+
 .tab-panel .project-list li {
   background: #fff;
   border: 2px solid #000;
@@ -408,10 +418,10 @@ footer code {
 }
 
 .video-embed-wrap {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
   position: relative;
   width: 100%;
-  max-width: min(960px, 100%);
+  max-width: 100%;
   aspect-ratio: 16 / 9;
   border: 2px solid #000;
   background: #000;
@@ -424,6 +434,12 @@ footer code {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Art 75: no max-width cap — players use full card width (taller 16:9 by default) */
+#panel-art75 .video-embed-wrap {
+  max-width: none;
+  width: 100%;
 }
 
 .tab-panel .lead {
