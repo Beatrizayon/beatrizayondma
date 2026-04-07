@@ -329,6 +329,25 @@ footer code {
   display: block;
 }
 
+.video-embed-wrap {
+  margin-top: 0.9rem;
+  position: relative;
+  width: 100%;
+  max-width: min(960px, 100%);
+  aspect-ratio: 16 / 9;
+  border: 2px solid #000;
+  background: #000;
+  box-sizing: border-box;
+}
+
+.video-embed-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .tab-panel .lead {
   margin: 0 0 1rem;
   color: var(--muted);
