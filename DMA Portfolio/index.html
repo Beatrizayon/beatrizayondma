@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <div class="star-field" aria-hidden="true">
@@ -43,7 +43,7 @@
             <button type="button" role="tab" id="tab-illustrator" aria-selected="false" aria-controls="panel-illustrator" tabindex="-1">Illustrator</button>
           </li>
           <li role="presentation">
-            <button type="button" role="tab" id="tab-studio" aria-selected="false" aria-controls="panel-studio" tabindex="-1">Studio Arts</button>
+            <button type="button" role="tab" id="tab-photography" aria-selected="false" aria-controls="panel-photography" tabindex="-1">Other Visual Works</button>
           </li>
         </ul>
       </nav>
@@ -79,8 +79,8 @@
           <button
             type="button"
             class="prev-button"
-            data-target-tab="tab-studio"
-            aria-label="Previous section: Studio Arts">
+            data-target-tab="tab-photography"
+            aria-label="Previous section: Other Visual Works">
             <img
               class="next-arrow-image nav-arrow-prev"
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
@@ -98,7 +98,7 @@
       <section id="panel-art74" class="tab-panel" role="tabpanel" aria-labelledby="tab-art74" hidden>
         <h2>Art 74</h2>
         <ul class="project-list">
-          <li class="project-list-item-wide">
+          <li>
             <a href="#">Minecraft 3D Print</a>
             <span class="desc">I first built my model within a Minecraft world using blocks to construct an Indian Ring Neck Parrot. As I have a parrot at home, I thought it'd be a cute souvenir to have with me. I then extracted my build as an STL file using Mineways to then 3D print my final model.</span>
             <div class="project-progress" role="group" aria-label="Minecraft 3D print progress">
@@ -127,7 +127,7 @@
               </figure>
             </div>
           </li>
-          <li class="project-list-item-wide">
+          <li>
             <a href="#">
               Mini-game: Catch the Fruits!
               <span class="fruit-icons" aria-hidden="true">
@@ -277,7 +277,7 @@
               </iframe>
             </div>
           </li>
-          <li class="project-list-item-wide">
+          <li>
             <a
               class="bb-cafe-link"
               href="https://beatrizayon.github.io/bbctitle.html"
@@ -402,7 +402,7 @@
       <section id="panel-illustrator" class="tab-panel" role="tabpanel" aria-labelledby="tab-illustrator" hidden>
         <h2>Illustrator</h2>
         <ul class="project-list">
-          <li class="project-list-item-wide">
+          <li>
             <a href="#">Artist Tour Advertisement</a>
             <span class="desc">For this assignment we were to design a billboard, merchandise, and a poster for an Artist Tour. My music artist of choice was DPR IAN. Through this assignment I was able to play with cohesive yet different compositions to suit the type of product.</span>
             <div class="dpr-carousel" role="region" aria-label="Artist tour advertisements gallery" tabindex="0">
@@ -456,8 +456,8 @@
           <button
             type="button"
             class="next-button"
-            data-target-tab="tab-studio"
-            aria-label="Next section: Studio Arts">
+            data-target-tab="tab-photography"
+            aria-label="Next section: Other Visual Works">
             <img
               class="next-arrow-image"
               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
@@ -466,8 +466,85 @@
         </div>
       </section>
 
-      <section id="panel-studio" class="tab-panel" role="tabpanel" aria-labelledby="tab-studio" hidden>
-        <h2>Studio Arts</h2>
+      <section id="panel-photography" class="tab-panel" role="tabpanel" aria-labelledby="tab-photography" hidden>
+        <h2>Other Visual Works</h2>
+
+        <div class="visual-work-block">
+          <h3 class="photo-work-title">Photography</h3>
+          <p class="photo-work-subtitle">Trenzas</p>
+          <p class="photo-work-desc">Through these photographs I explored Mexican Indigenous identity through the practice of capturing traditional braids.</p>
+          <div
+            class="dpr-carousel photo-carousel"
+            role="region"
+            aria-label="Trenzas — photography series"
+            tabindex="0"
+            data-auto-advance="5500">
+            <button type="button" class="dpr-carousel-nav dpr-prev" aria-label="Previous photograph" data-action="prev"></button>
+            <div class="dpr-carousel-stage" aria-live="polite">
+              <img class="dpr-slide is-active" src="beatriz_fineart1.jpg" alt="Fine art photograph 1 of 4" data-slide-index="0">
+              <img class="dpr-slide" src="beatriz_fineart2.jpg" alt="Fine art photograph 2 of 4" data-slide-index="1">
+              <img class="dpr-slide" src="beatriz_fineart3.jpg" alt="Fine art photograph 3 of 4" data-slide-index="2">
+              <img class="dpr-slide" src="beatriz_fineart4.jpg" alt="Fine art photograph 4 of 4" data-slide-index="3">
+            </div>
+            <button type="button" class="dpr-carousel-nav dpr-next" aria-label="Next photograph" data-action="next"></button>
+          </div>
+        </div>
+
+        <div class="visual-work-block visual-work-block--stop-motion">
+          <h3 class="photo-work-title" id="stop-motions-heading">Stop Motions</h3>
+          <p class="photo-work-desc">For these stop motion works I worked through storyboarding, sculpting and filming my projects.</p>
+          <div class="stop-motion-container" role="region" aria-labelledby="stop-motions-heading">
+            <div class="stop-motion-piece">
+              <a
+                class="stop-motion-link"
+                href="https://youtu.be/rbJih_-L1BA"
+                target="_blank"
+                rel="noopener noreferrer">Stop motion</a>
+              <div class="video-embed-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/rbJih_-L1BA"
+                  title="Stop motion — embedded video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+            </div>
+            <div class="stop-motion-piece">
+              <a
+                class="stop-motion-link"
+                href="https://youtu.be/ZxO-I-gVwbU"
+                target="_blank"
+                rel="noopener noreferrer">Bus Stop</a>
+              <div class="video-embed-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/ZxO-I-gVwbU"
+                  title="Bus Stop — stop motion"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+            </div>
+            <div class="stop-motion-piece">
+              <a
+                class="stop-motion-link"
+                href="https://youtu.be/VB9rUSbuESA"
+                target="_blank"
+                rel="noopener noreferrer">Little Visitor</a>
+              <div class="video-embed-wrap">
+                <iframe
+                  src="https://www.youtube.com/embed/VB9rUSbuESA"
+                  title="Little Visitor — stop motion"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="panel-section-nav panel-section-nav--split">
           <button
             type="button"
@@ -614,6 +691,26 @@
             next(1);
           }
         });
+
+        var autoMs = carousel.getAttribute("data-auto-advance");
+        if (autoMs) {
+          var delay = parseInt(autoMs, 10);
+          if (delay > 0) {
+            var autoTimer;
+            function startAuto() {
+              clearInterval(autoTimer);
+              autoTimer = setInterval(function () {
+                next(1);
+              }, delay);
+            }
+            function stopAuto() {
+              clearInterval(autoTimer);
+            }
+            carousel.addEventListener("mouseenter", stopAuto);
+            carousel.addEventListener("mouseleave", startAuto);
+            startAuto();
+          }
+        }
       });
     })();
   </script>

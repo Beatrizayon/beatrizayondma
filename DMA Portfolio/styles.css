@@ -259,24 +259,7 @@ footer code {
 }
 
 .tab-panel .project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
-  gap: 1.25rem;
-  align-items: start;
-}
-
-.tab-panel .project-list > li.project-list-item-wide {
-  grid-column: 1 / -1;
-}
-
-#panel-art75 .project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-#panel-art75 .project-list li {
-  padding: 2.15rem 2.35rem;
+  display: block;
 }
 
 .tab-panel .project-list li {
@@ -284,8 +267,11 @@ footer code {
   border: 2px solid #000;
   border-radius: 0;
   padding: 1.9rem 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab-panel .project-list li:last-child {
   margin-bottom: 0;
-  min-width: 0;
 }
 
 .tab-panel .project-list li:hover {
@@ -418,10 +404,10 @@ footer code {
 }
 
 .video-embed-wrap {
-  margin-top: 1rem;
+  margin-top: 0.9rem;
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: min(960px, 100%);
   aspect-ratio: 16 / 9;
   border: 2px solid #000;
   background: #000;
@@ -436,18 +422,90 @@ footer code {
   border: 0;
 }
 
-/* Art 75: no max-width cap — players use full card width (taller 16:9 by default) */
-#panel-art75 .video-embed-wrap {
-  max-width: none;
-  width: 100%;
-}
-
 .tab-panel .lead {
   margin: 0 0 1rem;
   color: var(--muted);
   font-size: 1.22rem;
   line-height: 1.75;
   max-width: 52ch;
+}
+
+#panel-photography .visual-work-block {
+  margin-bottom: 2.25rem;
+}
+
+#panel-photography .visual-work-block:last-of-type {
+  margin-bottom: 0;
+}
+
+#panel-photography .visual-work-block--stop-motion {
+  padding-top: 2rem;
+  border-top: 2px solid #000;
+}
+
+#panel-photography .photo-work-title {
+  font-family: "Montserrat", var(--font);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+  color: #000;
+  line-height: 1.3;
+}
+
+#panel-photography .visual-work-block:first-child .photo-work-title {
+  margin-top: 0;
+}
+
+#panel-photography .photo-work-subtitle {
+  margin: 0 0 0.4rem;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+#panel-photography .photo-work-desc {
+  margin: 0 0 1rem;
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+#panel-photography .stop-motion-container {
+  margin-top: 0.85rem;
+  min-height: 0;
+  border: 2px solid #000;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+#panel-photography .stop-motion-link {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.18rem;
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 0.65rem;
+}
+
+#panel-photography .stop-motion-link:hover {
+  color: var(--accent-deep);
+}
+
+#panel-photography .stop-motion-container .video-embed-wrap {
+  margin-top: 0;
+}
+
+#panel-photography .stop-motion-piece + .stop-motion-piece {
+  margin-top: 1.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid #000;
+}
+
+#panel-photography .panel-section-nav {
+  margin-top: 1.75rem;
 }
 
 .about-layout {
