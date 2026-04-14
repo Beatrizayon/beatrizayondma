@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DMA Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="star-field" aria-hidden="true">
+    <span class="pixel-star star-sm s1"></span>
+    <span class="pixel-star star-md s2"></span>
+    <span class="pixel-star star-lg s3"></span>
+    <span class="pixel-star star-sm s4"></span>
+    <span class="pixel-star star-md s5"></span>
+    <span class="pixel-star star-lg s6"></span>
+    <span class="pixel-star star-sm s7"></span>
+    <span class="pixel-star star-md s8"></span>
+    <span class="pixel-star star-lg s9"></span>
+    <span class="pixel-star star-sm s10"></span>
+  </div>
+  <div class="wrap">
+    <header>
+      <h1>DMA Portfolio</h1>
+      <p class="tagline">Beatriz Ayon Tapia</p>
+
+      <nav class="tabs" aria-label="Portfolio sections">
+        <ul class="tablist" role="tablist">
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-about" aria-selected="true" aria-controls="panel-about">About Me</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-art74" aria-selected="false" aria-controls="panel-art74" tabindex="-1">Art 74</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-art75" aria-selected="false" aria-controls="panel-art75" tabindex="-1">Art 75</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-illustrator" aria-selected="false" aria-controls="panel-illustrator" tabindex="-1">Illustrator</button>
+          </li>
+          <li role="presentation">
+            <button type="button" role="tab" id="tab-studio" aria-selected="false" aria-controls="panel-studio" tabindex="-1">Studio Arts</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="tab-panels">
+      <section id="panel-about" class="tab-panel is-active" role="tabpanel" aria-labelledby="tab-about">
+        <h2>About Me</h2>
+        <div class="about-layout">
+          <figure class="about-figure">
+            <img
+              class="about-portrait"
+              src="selfportrait.png"
+              alt="Self-portrait of Beatriz Ayon Tapia">
+            <figcaption class="about-caption">Self Portrait created in p5.js</figcaption>
+          </figure>
+          <div class="about-text">
+            <p class="lead">Hello, I am Beatriz Ayon Tapia a first generation college student at San Jose State. I have always used art as a manner of self expression exploring different creative mediums and programs. Here at San Jose State University the Digital Media Arts (DMA) program has allowed me to collaborate other mediums with computer programs to create visuals works without limits.</p>
+            <ul class="about-school-list">
+              <li>
+                Chabot College (2022-2025)
+                <ul class="about-certificates">
+                  <li>Associates in Studio Arts</li>
+                  <li>Certificate in Animation</li>
+                </ul>
+              </li>
+            </ul>
+            <p><strong>Contact me:</strong> <a href="mailto:beatriz.ayon04@gmail.com">beatriz.ayon04@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="panel-next">
+          <button type="button" class="next-button" data-target-tab="tab-art74" aria-label="Next section: Art 74">
+            <img
+              class="next-arrow-image"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+        </div>
+      </section>
+
+      <section id="panel-art74" class="tab-panel" role="tabpanel" aria-labelledby="tab-art74" hidden>
+        <h2>Art 74</h2>
+        <ul class="project-list">
+          <li>
+            <a href="#">Minecraft into 3D</a>
+            <span class="desc">I firstly built my model within Minecraft using blocks to construct an Indian Ring Neck Parakeet. I then extracted my build using Mineways and then 3d print my final model.</span>
+          </li>
+          <li>
+            <a href="#">
+              Mini-game: Catch the Fruits!
+              <span class="fruit-icons" aria-hidden="true">
+                <!-- Orange slice -->
+                <!-- Apple -->
+                <svg class="fruit-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 10
+                       C12 10 9 13 9 17
+                       C9 22 12 25 16 25
+                       C20 25 23 22 23 17
+                       C23 13 20 10 16 10 Z"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M16 10 L16 6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                  <path
+                    d="M17 6 C19 6 21 7 22 9"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M13 10 C14 8 18 8 19 10"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                  />
+                </svg>
+                <!-- Strawberry -->
+                <svg class="fruit-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 10
+                       L22 12
+                       L24 18
+                       L20 25
+                       L12 25
+                       L8 18
+                       L10 12 Z"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M12 10 L9 8 M16 9 L16 7 M20 10 L23 8"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"
+                  />
+                  <circle cx="13" cy="17" r="1" fill="#000" />
+                  <circle cx="17" cy="17" r="1" fill="#000" />
+                  <circle cx="15" cy="20" r="1" fill="#000" />
+                </svg>
+                <!-- Apple -->
+                <svg class="fruit-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 10
+                       C12 10 9 13 9 17
+                       C9 22 12 25 16 25
+                       C20 25 23 22 23 17
+                       C23 13 20 10 16 10 Z"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M16 10 L16 6"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                  />
+                  <path
+                    d="M17 6 C19 6 21 7 22 9"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M13 10 C14 8 18 8 19 10"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                  />
+                </svg>
+                <!-- Strawberry -->
+                <svg class="fruit-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M16 10
+                       L22 12
+                       L24 18
+                       L20 25
+                       L12 25
+                       L8 18
+                       L10 12 Z"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linejoin="miter"
+                    shape-rendering="crispEdges"
+                  />
+                  <path
+                    d="M12 10 L9 8 M16 9 L16 7 M20 10 L23 8"
+                    fill="none"
+                    stroke="#000"
+                    stroke-width="2"
+                    stroke-linecap="square"
+                    stroke-linejoin="miter"
+                  />
+                  <circle cx="13" cy="17" r="1" fill="#000" />
+                  <circle cx="17" cy="17" r="1" fill="#000" />
+                  <circle cx="15" cy="20" r="1" fill="#000" />
+                </svg>
+              </span>
+            </a>
+            <span class="desc">Catch the fruits in a fun mini-game made through p5.js.</span>
+            <div class="mini-game-frame" aria-hidden="false">
+              <iframe
+                class="mini-game-embed"
+                src="gamecode/index.html"
+                title="Mini-game: Catch the Fruits!"
+                loading="lazy"
+                scrolling="yes">
+              </iframe>
+            </div>
+          </li>
+          <li>
+            <a
+              class="bb-cafe-link"
+              href="https://beatrizayon.github.io/bbctitle.html"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span class="bb-cafe-thumb" aria-hidden="true">
+                <img src="bbcthumbnail.png" alt="">
+              </span>
+              <span class="bb-cafe-title">Blue Burrow Cafe</span>
+              <span class="bb-play-badge" aria-hidden="true">
+                <svg viewBox="0 0 50 50" width="22" height="22" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                  <path d="M18 14 L34 25 L18 36 Z" fill="none" stroke="#000" stroke-width="4" stroke-linejoin="miter" />
+                </svg>
+              </span>
+            </a>
+            <span class="desc">Work for a shift at the Blue Burrow Cafe! Serve the customers the correct order to prevent them from glitching out.</span>
+          </li>
+        </ul>
+        <div class="panel-next">
+          <button
+            type="button"
+            class="next-button"
+            data-target-tab="tab-art75"
+            aria-label="Next section: Art 75">
+            <img
+              class="next-arrow-image"
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='48' viewBox='0 0 96 48'%3E%3Cpath d='M4 24h76' stroke='%23000' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M64 8l24 16-24 16' fill='none' stroke='%23000' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+              alt="">
+          </button>
+        </div>
+      </section>
+
+      <section id="panel-art75" class="tab-panel" role="tabpanel" aria-labelledby="tab-art75" hidden>
+        <h2>Art 75</h2>
+        <ul class="project-list">
+          <li>
+            <a href="#">Project title</a>
+            <span class="desc">Project description.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="panel-illustrator" class="tab-panel" role="tabpanel" aria-labelledby="tab-illustrator" hidden>
+        <h2>Illustrator</h2>
+        <ul class="project-list">
+          <li>
+            <a href="#">Artist Tour Advertisement</a>
+            <span class="desc">I designed three different advertisements using Adobe Illustrator for a mock concert. This series entails of 1) Artist Merchandise 2) Tour Billboard and 3) Tour Poster.</span>
+            <div class="dpr-carousel" role="region" aria-label="Artist tour advertisements gallery" tabindex="0">
+              <button type="button" class="dpr-carousel-nav dpr-prev" aria-label="Previous image" data-action="prev"></button>
+              <div class="dpr-carousel-stage" aria-live="polite">
+                <img class="dpr-slide is-active" src="dprmerch.png" alt="Artist tour advertisement: merch" data-slide-index="0">
+                <img class="dpr-slide" src="dprbillboard.png" alt="Artist tour advertisement: billboard" data-slide-index="1">
+                <img class="dpr-slide" src="dprposter.png" alt="Artist tour advertisement: poster" data-slide-index="2">
+              </div>
+              <button type="button" class="dpr-carousel-nav dpr-next" aria-label="Next image" data-action="next"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="panel-studio" class="tab-panel" role="tabpanel" aria-labelledby="tab-studio" hidden>
+        <h2>Studio Arts</h2>
+      </section>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      var tablist = document.querySelector(".tablist");
+      if (!tablist) return;
+      var tabs = tablist.querySelectorAll('[role="tab"]');
+      var panels = document.querySelectorAll('[role="tabpanel"]');
+
+      function showPanel(index) {
+        tabs.forEach(function (tab, i) {
+          var on = i === index;
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+          tab.tabIndex = on ? 0 : -1;
+        });
+        panels.forEach(function (panel, i) {
+          var on = i === index;
+          panel.classList.toggle("is-active", on);
+          panel.hidden = !on;
+        });
+      }
+
+      tablist.addEventListener("click", function (e) {
+        var btn = e.target.closest('[role="tab"]');
+        if (!btn || !tablist.contains(btn)) return;
+        var i = Array.prototype.indexOf.call(tabs, btn);
+        if (i >= 0) showPanel(i);
+      });
+
+      document.addEventListener("click", function (e) {
+        var nextBtn = e.target.closest(".next-button");
+        if (!nextBtn) return;
+        var targetId = nextBtn.getAttribute("data-target-tab");
+        if (!targetId) return;
+        var targetTab = document.getElementById(targetId);
+        if (!targetTab) return;
+        var i = Array.prototype.indexOf.call(tabs, targetTab);
+        if (i < 0) return;
+        showPanel(i);
+        targetTab.focus();
+      });
+
+      tablist.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight" && e.key !== "Home" && e.key !== "End") return;
+        var current = Array.prototype.indexOf.call(tabs, document.activeElement);
+        if (current < 0) return;
+        e.preventDefault();
+        var next;
+        if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = tabs.length - 1;
+        else {
+          var delta = e.key === "ArrowLeft" ? -1 : 1;
+          next = (current + delta + tabs.length) % tabs.length;
+        }
+        tabs[next].focus();
+        showPanel(next);
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var carousels = document.querySelectorAll(".dpr-carousel");
+      if (!carousels.length) return;
+
+      function renderCarousel(carousel, index) {
+        var slides = Array.prototype.slice.call(carousel.querySelectorAll(".dpr-slide"));
+        var n = slides.length;
+        if (!n) return;
+
+        slides.forEach(function (s) {
+          s.classList.remove("is-active", "is-left", "is-right");
+        });
+
+        var left = (index - 1 + n) % n;
+        var right = (index + 1) % n;
+
+        slides[left].classList.add("is-left");
+        slides[index].classList.add("is-active");
+        slides[right].classList.add("is-right");
+      }
+
+      carousels.forEach(function (carousel) {
+        var slides = Array.prototype.slice.call(carousel.querySelectorAll(".dpr-slide"));
+        if (!slides.length) return;
+
+        var initialIndex = slides.findIndex(function (s) {
+          return s.classList.contains("is-active");
+        });
+        if (initialIndex < 0) initialIndex = 0;
+
+        var state = { index: initialIndex };
+
+        renderCarousel(carousel, state.index);
+
+        var prevBtn = carousel.querySelector('[data-action="prev"]');
+        var nextBtn = carousel.querySelector('[data-action="next"]');
+
+        function next(delta) {
+          state.index = (state.index + delta + slides.length) % slides.length;
+          renderCarousel(carousel, state.index);
+        }
+
+        if (prevBtn) prevBtn.addEventListener("click", function () { next(-1); });
+        if (nextBtn) nextBtn.addEventListener("click", function () { next(1); });
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener("click", function () {
+            state.index = i;
+            renderCarousel(carousel, state.index);
+          });
+        });
+
+        carousel.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            next(-1);
+          } else if (e.key === "ArrowRight") {
+            e.preventDefault();
+            next(1);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
