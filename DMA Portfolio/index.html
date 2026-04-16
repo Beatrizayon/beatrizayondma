@@ -62,7 +62,7 @@
           </figure>
           <div class="about-text">
             <p class="artist-statement-label">Artist Statement:</p>
-            <p class="lead">I am Beatriz Ayon Tapia, a first-generation Mexican American college student at San Jose State. I have always used art as a means of self expression -- a way to process, communicate, and connect to the world around me. Part of my practice is exploring different creative mediums and programs. Here at San Jose State University, the Digital Media Arts (DMA) program has enabled me to collaborate with various media and computer programs to create visual works without limits.</p>
+            <p class="lead">I’m Beatriz Ayon Tapia, a first-generation Mexican American student at San Jose State University. Art has always been my language for processing, communicating, and connecting with the world. My creative journey is defined by curiosity, exploring diverse mediums and digital tools to bring my vision to life. Through the Digital Media Arts (DMA) program, I collaborate across disciplines, exploring without boundaries. I aim to craft work that resonates with myself yet commentating on the outer world.</p>
             <ul class="about-school-list">
               <li>
                 Chabot College (2022-2025)
@@ -96,7 +96,7 @@
       </section>
 
       <section id="panel-art74" class="tab-panel" role="tabpanel" aria-labelledby="tab-art74" hidden>
-        <h2>Art 74</h2>
+        <h2>Art 74 (2025)</h2>
         <ul class="project-list">
           <li>
             <a href="#">Minecraft 3D Print</a>
@@ -266,15 +266,35 @@
                 </svg>
               </span>
             </a>
-            <span class="desc">Catch the fruits in a fun mini-game made through p5.js.</span>
-            <div class="mini-game-frame" aria-hidden="false">
-              <iframe
-                class="mini-game-embed"
-                src="gamecode/index.html"
-                title="Mini-game: Catch the Fruits!"
-                loading="lazy"
-                scrolling="yes">
-              </iframe>
+            <span class="desc">Point and click game created through p5.js. This was my first time using p5.js to code, so the game turned out very simple. The user advances levels by collecting fruits. Introduction and ending background art made in Adobe Procreate.</span>
+            <div class="mini-game-area mini-game-switcher" id="mini-game-switcher" aria-hidden="false">
+              <div class="mini-game-frame" aria-hidden="false">
+                <iframe
+                  class="mini-game-embed mini-game-embed--game"
+                  src="gamecode/index.html"
+                  title="Mini-game: Catch the Fruits!"
+                  loading="lazy"
+                  scrolling="yes">
+                </iframe>
+                <iframe
+                  class="mini-game-embed mini-game-embed--code"
+                  id="mini-game-code-iframe"
+                  title="Catch the Fruits game code"
+                  loading="lazy"
+                  scrolling="no"
+                  data-src="gamecode/code-view.html?file=gamecode.js"
+                  src="">
+                </iframe>
+              </div>
+              <button
+                type="button"
+                class="mini-game-code-next"
+                aria-label="Show game code"
+                aria-pressed="false"
+                data-mode="game">
+                <span class="mini-game-code-label">code</span>
+                <span class="mini-game-code-arrow" aria-hidden="true">›</span>
+              </button>
             </div>
           </li>
           <li>
@@ -326,8 +346,8 @@
       </section>
 
       <section id="panel-art75" class="tab-panel" role="tabpanel" aria-labelledby="tab-art75" hidden>
-        <h2>Art 75</h2>
-        <p class="lead">Here are video projects made for the course Art 75 using Adobe Premiere Pro and other editing softwares. This course allowed me to experiment with different editing techniques and storytelling elements.</p>
+        <h2>Art 75 (2025)</h2>
+        <p class="lead">I experimented with different editing techniques and storytelling elements when creating these video projects. I used programs such as Adobe Premiere Pro and CapCut to assemble the footage. Footages were captured by me showing my perspective of the environment around me.</p>
         <ul class="project-list">
           <li>
             <a
@@ -711,6 +731,43 @@
             startAuto();
           }
         }
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var switcher = document.getElementById("mini-game-switcher");
+      if (!switcher) return;
+
+      var btn = switcher.querySelector(".mini-game-code-next");
+      if (!btn) return;
+
+      var codeFrame = switcher.querySelector(".mini-game-embed--code");
+      if (!codeFrame) return;
+      var codeLabel = btn.querySelector(".mini-game-code-label");
+
+      var codeSrc = codeFrame.getAttribute("data-src");
+
+      function setMode(mode) {
+        var showCode = mode === "code";
+        switcher.classList.toggle("is-code", showCode);
+
+        if (showCode) {
+          if (!codeFrame.getAttribute("src") && codeSrc) {
+            codeFrame.setAttribute("src", codeSrc);
+          }
+          btn.setAttribute("aria-label", "Show game preview");
+          btn.setAttribute("aria-pressed", "true");
+          if (codeLabel) codeLabel.textContent = "game";
+        } else {
+          btn.setAttribute("aria-label", "Show game code");
+          btn.setAttribute("aria-pressed", "false");
+          if (codeLabel) codeLabel.textContent = "code";
+        }
+      }
+
+      btn.addEventListener("click", function () {
+        setMode(switcher.classList.contains("is-code") ? "game" : "code");
       });
     })();
   </script>

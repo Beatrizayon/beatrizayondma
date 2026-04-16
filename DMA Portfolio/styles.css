@@ -403,6 +403,73 @@ footer code {
   display: block;
 }
 
+.mini-game-area {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.mini-game-area .mini-game-frame {
+  margin: 0;
+  flex: 0 0 auto;
+  width: min(600px, 100%);
+  max-width: 100%;
+}
+
+.mini-game-switcher .mini-game-code-next {
+  min-width: 44px;
+  height: 28px;
+  border-radius: 7px;
+  border: 2px solid #000;
+  background: rgba(255, 255, 255, 0.95);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.14rem;
+  padding: 0 0.3rem;
+}
+
+.mini-game-switcher .mini-game-code-next:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 3px;
+}
+
+.mini-game-switcher .mini-game-code-label {
+  font-family: "Montserrat", var(--font);
+  font-size: 0.52rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: rgba(0, 0, 0, 0.68);
+  white-space: nowrap;
+}
+
+.mini-game-switcher .mini-game-code-arrow {
+  font-family: var(--font-pixel);
+  font-size: 0.78rem;
+  line-height: 1;
+  transform: translateX(1px);
+}
+
+.mini-game-switcher.is-code .mini-game-code-arrow {
+  transform: rotate(180deg) translateX(2px);
+}
+
+.mini-game-switcher .mini-game-embed--code {
+  display: none;
+}
+
+.mini-game-switcher.is-code .mini-game-embed--game {
+  display: none;
+}
+
+.mini-game-switcher.is-code .mini-game-embed--code {
+  display: block;
+}
+
 .video-embed-wrap {
   margin-top: 0.9rem;
   position: relative;
@@ -428,6 +495,11 @@ footer code {
   font-size: 1.22rem;
   line-height: 1.75;
   max-width: 52ch;
+}
+
+#panel-art75 .lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 #panel-photography .visual-work-block {
@@ -736,7 +808,6 @@ footer code {
   display: block;
   width: 100%;
   height: auto;
-  vertical-align: middle;
 }
 
 .illustrator-figure--large {
