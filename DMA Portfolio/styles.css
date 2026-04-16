@@ -407,15 +407,16 @@ footer code {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.35rem;
 }
 
 .mini-game-area .mini-game-frame {
   margin: 0;
-  flex: 0 0 auto;
-  width: min(600px, 100%);
-  max-width: 100%;
+  flex: 1 1 auto;
+  width: calc(100% - 52px);
+  max-width: 600px;
+  min-width: 220px;
 }
 
 .mini-game-switcher .mini-game-code-next {
@@ -468,6 +469,19 @@ footer code {
 
 .mini-game-switcher.is-code .mini-game-embed--code {
   display: block;
+}
+
+@media (max-width: 700px) {
+  .mini-game-area {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .mini-game-area .mini-game-frame {
+    width: min(600px, 100%);
+    min-width: 0;
+  }
 }
 
 .video-embed-wrap {
